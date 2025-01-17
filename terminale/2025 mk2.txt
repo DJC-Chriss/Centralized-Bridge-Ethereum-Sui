@@ -1,0 +1,1090 @@
+Last login: Wed Jan 15 10:25:50 on ttys001
+cris@MacBook-Pro-Cristian ~ % forge --version
+forge 0.2.0 (00efa0d 2024-12-09T00:29:01.805479000Z)
+cris@MacBook-Pro-Cristian ~ % cast --version
+cast 0.2.0 (00efa0d 2024-12-09T00:29:01.600538000Z)
+cris@MacBook-Pro-Cristian ~ % cd /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+cris@MacBook-Pro-Cristian project % forge init foundry-project 
+Initializing /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project...
+Installing forge-std in /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/forge-std (url: Some("https://github.com/foundry-rs/forge-std"), tag: None)
+Cloning into '/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/forge-std'...
+remote: Enumerating objects: 1983, done.
+remote: Counting objects: 100% (837/837), done.
+remote: Compressing objects: 100% (194/194), done.
+remote: Total 1983 (delta 768), reused 649 (delta 643), pack-reused 1146 (from 5)
+Receiving objects: 100% (1983/1983), 699.78 KiB | 4.57 MiB/s, done.
+Resolving deltas: 100% (1294/1294), done.
+    Installed forge-std v1.9.5
+    Initialized forge project
+cris@MacBook-Pro-Cristian project % forge build
+Nothing to compile
+cris@MacBook-Pro-Cristian project % cd foundry-project 
+cris@MacBook-Pro-Cristian foundry-project % forge build       
+[⠊] Compiling...
+[⠒] Unable to resolve imports:
+      "@openzeppelin/contracts/token/ERC20/ERC20.sol" in "/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/src/IBT.sol"
+      "@openzeppelin/contracts/access/Ownable.sol" in "/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/src/IBT.sol"
+with remappings:
+      forge-std/=/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/forge-std/src/
+[⠢] Compiling 28 files with Solc 0.8.28
+[⠰] Installing Solc version 0.8.28
+[⠰] Successfully installed Solc 0.8.28
+[⠔] Solc 0.8.28 finished in 3.11s
+Error: Compiler run failed:
+Error (6275): Source "@openzeppelin/contracts/token/ERC20/ERC20.sol" not found: File not found. Searched the following locations: "/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project".
+ParserError: Source "@openzeppelin/contracts/token/ERC20/ERC20.sol" not found: File not found. Searched the following locations: "/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project".
+ --> src/IBT.sol:4:1:
+  |
+4 | import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error (6275): Source "@openzeppelin/contracts/access/Ownable.sol" not found: File not found. Searched the following locations: "/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project".
+ParserError: Source "@openzeppelin/contracts/access/Ownable.sol" not found: File not found. Searched the following locations: "/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project".
+ --> src/IBT.sol:5:1:
+  |
+5 | import "@openzeppelin/contracts/access/Ownable.sol";
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+cris@MacBook-Pro-Cristian foundry-project % forge install OpenZeppelin/openzeppelin-contracts
+
+Installing openzeppelin-contracts in /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/openzeppelin-contracts (url: Some("https://github.com/OpenZeppelin/openzeppelin-contracts"), tag: None)
+Error: The target directory is a part of or on its own an already initialized git repository,
+and it requires clean working and staging areas, including no untracked files.
+
+Check the current git repository's status with `git status`.
+Then, you can track files with `git add ...` and then commit them with `git commit`,
+ignore them in the `.gitignore` file, or run this command again with the `--no-commit` flag.
+cris@MacBook-Pro-Cristian foundry-project % git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	src/IBT.sol
+
+nothing added to commit but untracked files present (use "git add" to track)
+cris@MacBook-Pro-Cristian foundry-project % forge install OpenZeppelin/openzeppelin-contracts --no-commit
+
+Installing openzeppelin-contracts in /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/openzeppelin-contracts (url: Some("https://github.com/OpenZeppelin/openzeppelin-contracts"), tag: None)
+Cloning into '/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/openzeppelin-contracts'...
+remote: Enumerating objects: 49066, done.
+remote: Counting objects: 100% (63/63), done.
+remote: Compressing objects: 100% (52/52), done.
+remote: Total 49066 (delta 20), reused 11 (delta 11), pack-reused 49003 (from 3
+Receiving objects: 100% (49066/49066), 46.46 MiB | 22.37 MiB/s, done.
+Resolving deltas: 100% (30833/30833), done.
+Submodule 'lib/erc4626-tests' (https://github.com/a16z/erc4626-tests.git) registered for path 'lib/erc4626-tests'
+Submodule 'lib/forge-std' (https://github.com/foundry-rs/forge-std) registered for path 'lib/forge-std'
+Submodule 'lib/halmos-cheatcodes' (https://github.com/a16z/halmos-cheatcodes) registered for path 'lib/halmos-cheatcodes'
+Cloning into '/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/openzeppelin-contracts/lib/erc4626-tests'...
+remote: Enumerating objects: 11, done.        
+remote: Counting objects: 100% (11/11), done.        
+remote: Compressing objects: 100% (10/10), done.        
+remote: Total 11 (delta 3), reused 7 (delta 1), pack-reused 0 (from 0)        
+Receiving objects: 100% (11/11), 22.18 KiB | 946.00 KiB/s, done.
+Resolving deltas: 100% (3/3), done.
+Cloning into '/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/openzeppelin-contracts/lib/forge-std'...
+remote: Enumerating objects: 1983, done.        
+remote: Counting objects: 100% (827/827), done.        
+remote: Compressing objects: 100% (183/183), done.        
+remote: Total 1983 (delta 756), reused 650 (delta 644), pack-reused 1156 (from 5)        
+Receiving objects: 100% (1983/1983), 702.43 KiB | 4.65 MiB/s, done.
+Resolving deltas: 100% (1290/1290), done.
+Cloning into '/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/lib/openzeppelin-contracts/lib/halmos-cheatcodes'...
+remote: Enumerating objects: 43, done.        
+remote: Counting objects: 100% (43/43), done.        
+remote: Compressing objects: 100% (34/34), done.        
+remote: Total 43 (delta 17), reused 25 (delta 9), pack-reused 0 (from 0)        
+Receiving objects: 100% (43/43), 23.36 KiB | 7.79 MiB/s, done.
+Resolving deltas: 100% (17/17), done.
+    Installed openzeppelin-contracts v5.2.0
+cris@MacBook-Pro-Cristian foundry-project % forge build
+[⠊] Compiling...
+[⠰] Compiling 34 files with Solc 0.8.28
+[⠔] Solc 0.8.28 finished in 311.24ms
+Error: Compiler run failed:
+Error (3415): No arguments passed to the base constructor. Specify the arguments or mark "IBT" as abstract.
+ --> src/IBT.sol:7:1:
+  |
+7 | contract IBT is ERC20, Ownable {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+Note: Base constructor parameters:
+  --> lib/openzeppelin-contracts/contracts/access/Ownable.sol:38:16:
+   |
+38 |     constructor(address initialOwner) {
+   |                ^^^^^^^^^^^^^^^^^^^^^^
+
+cris@MacBook-Pro-Cristian foundry-project % forge build
+[⠊] Compiling...
+[⠒] Compiling 34 files with Solc 0.8.28
+[⠑] Solc 0.8.28 finished in 595.83ms
+Compiler run successful!
+cris@MacBook-Pro-Cristian foundry-project % forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8545 --broadcast
+
+Error: contract source info format must be `<path>:<contractname>` or `<contractname>`
+cris@MacBook-Pro-Cristian foundry-project % forge create src/IBT.sol:IBT \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --legacy
+[⠊] Compiling...
+No files changed, compilation skipped
+Warning: Dry run enabled, not broadcasting transaction
+
+Contract: IBT
+Transaction: {
+  "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+  "to": null,
+  "gasPrice": "0x77359400",
+  "gas": "0x99e93",
+  "input": "0x608060405234801561000f575f5ffd5b50336040518060400160405280600781526020016624a12a37b5b2b760c91b8152506040518060400160405280600381526020016212509560ea1b815250816003908161005c9190610191565b5060046100698282610191565b5050506001600160a01b03811661009957604051631e4fbdf760e01b81525f600482015260240160405180910390fd5b6100a2816100a8565b5061024b565b600580546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0905f90a35050565b634e487b7160e01b5f52604160045260245ffd5b600181811c9082168061012157607f821691505b60208210810361013f57634e487b7160e01b5f52602260045260245ffd5b50919050565b601f82111561018c57805f5260205f20601f840160051c8101602085101561016a5750805b601f840160051c820191505b81811015610189575f8155600101610176565b50505b505050565b81516001600160401b038111156101aa576101aa6100f9565b6101be816101b8845461010d565b84610145565b6020601f8211600181146101f0575f83156101d95750848201515b5f19600385901b1c1916600184901b178455610189565b5f84815260208120601f198516915b8281101561021f57878501518255602094850194600190920191016101ff565b508482101561023c57868401515f19600387901b60f8161c191681555b50505050600190811b01905550565b610904806102585f395ff3fe608060405234801561000f575f5ffd5b50600436106100e5575f3560e01c806370a082311161008857806395d89b411161006357806395d89b41146101d1578063a9059cbb146101d9578063dd62ed3e146101ec578063f2fde38b14610224575f5ffd5b806370a0823114610186578063715018a6146101ae5780638da5cb5b146101b6575f5ffd5b806323b872dd116100c357806323b872dd1461013c578063313ce5671461014f57806340c10f191461015e57806342966c6814610173575f5ffd5b806306fdde03146100e9578063095ea7b31461010757806318160ddd1461012a575b5f5ffd5b6100f1610237565b6040516100fe919061075d565b60405180910390f35b61011a6101153660046107ad565b6102c7565b60405190151581526020016100fe565b6002545b6040519081526020016100fe565b61011a61014a3660046107d5565b6102e0565b604051601281526020016100fe565b61017161016c3660046107ad565b610303565b005b61017161018136600461080f565b610319565b61012e610194366004610826565b6001600160a01b03165f9081526020819052604090205490565b610171610326565b6005546040516001600160a01b0390911681526020016100fe565b6100f1610339565b61011a6101e73660046107ad565b610348565b61012e6101fa366004610846565b6001600160a01b039182165f90815260016020908152604080832093909416825291909152205490565b610171610232366004610826565b610355565b60606003805461024690610877565b80601f016020809104026020016040519081016040528092919081815260200182805461027290610877565b80156102bd5780601f10610294576101008083540402835291602001916102bd565b820191905f5260205f20905b8154815290600101906020018083116102a057829003601f168201915b5050505050905090565b5f336102d4818585610394565b60019150505b92915050565b5f336102ed8582856103a6565b6102f8858585610422565b506001949350505050565b61030b61047f565b61031582826104ac565b5050565b61032333826104e0565b50565b61032e61047f565b6103375f610514565b565b60606004805461024690610877565b5f336102d4818585610422565b61035d61047f565b6001600160a01b03811661038b57604051631e4fbdf760e01b81525f60048201526024015b60405180910390fd5b61032381610514565b6103a18383836001610565565b505050565b6001600160a01b038381165f908152600160209081526040808320938616835292905220545f1981101561041c578181101561040e57604051637dc7a0d960e11b81526001600160a01b03841660048201526024810182905260448101839052606401610382565b61041c84848484035f610565565b50505050565b6001600160a01b03831661044b57604051634b637e8f60e11b81525f6004820152602401610382565b6001600160a01b0382166104745760405163ec442f0560e01b81525f6004820152602401610382565b6103a1838383610637565b6005546001600160a01b031633146103375760405163118cdaa760e01b8152336004820152602401610382565b6001600160a01b0382166104d55760405163ec442f0560e01b81525f6004820152602401610382565b6103155f8383610637565b6001600160a01b03821661050957604051634b637e8f60e11b81525f6004820152602401610382565b610315825f83610637565b600580546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0905f90a35050565b6001600160a01b03841661058e5760405163e602df0560e01b81525f6004820152602401610382565b6001600160a01b0383166105b757604051634a1406b160e11b81525f6004820152602401610382565b6001600160a01b038085165f908152600160209081526040808320938716835292905220829055801561041c57826001600160a01b0316846001600160a01b03167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9258460405161062991815260200190565b60405180910390a350505050565b6001600160a01b038316610661578060025f82825461065691906108af565b909155506106d19050565b6001600160a01b0383165f90815260208190526040902054818110156106b35760405163391434e360e21b81526001600160a01b03851660048201526024810182905260448101839052606401610382565b6001600160a01b0384165f9081526020819052604090209082900390555b6001600160a01b0382166106ed5760028054829003905561070b565b6001600160a01b0382165f9081526020819052604090208054820190555b816001600160a01b0316836001600160a01b03167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef8360405161075091815260200190565b60405180910390a3505050565b602081525f82518060208401528060208501604085015e5f604082850101526040601f19601f83011684010191505092915050565b80356001600160a01b03811681146107a8575f5ffd5b919050565b5f5f604083850312156107be575f5ffd5b6107c783610792565b946020939093013593505050565b5f5f5f606084860312156107e7575f5ffd5b6107f084610792565b92506107fe60208501610792565b929592945050506040919091013590565b5f6020828403121561081f575f5ffd5b5035919050565b5f60208284031215610836575f5ffd5b61083f82610792565b9392505050565b5f5f60408385031215610857575f5ffd5b61086083610792565b915061086e60208401610792565b90509250929050565b600181811c9082168061088b57607f821691505b6020821081036108a957634e487b7160e01b5f52602260045260245ffd5b50919050565b808201808211156102da57634e487b7160e01b5f52601160045260245ffdfea26469706673582212203847fdc3992b1c060856367091e7021565ff13986f8abf08418bcbad3c872c7d64736f6c634300081c0033",
+  "nonce": "0x0",
+  "chainId": "0x7a69"
+}
+ABI: [
+  {
+    "type": "constructor",
+    "inputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "allowance",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "spender",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "approve",
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "balanceOf",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "burn",
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "decimals",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "uint8"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "mint",
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "name",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "renounceOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "symbol",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "totalSupply",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "transfer",
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "transferFrom",
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "to",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "transferOwnership",
+    "inputs": [
+      {
+        "name": "newOwner",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "Approval",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "spender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      {
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Transfer",
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "to",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "ERC20InsufficientAllowance",
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "allowance",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "needed",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ERC20InsufficientBalance",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "balance",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "needed",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ERC20InvalidApprover",
+    "inputs": [
+      {
+        "name": "approver",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ERC20InvalidReceiver",
+    "inputs": [
+      {
+        "name": "receiver",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ERC20InvalidSender",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ERC20InvalidSpender",
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OwnableInvalidOwner",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OwnableUnauthorizedAccount",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  }
+]
+
+Warning: To broadcast this transaction, add --broadcast to the previous command. See forge create --help for more.
+cris@MacBook-Pro-Cristian foundry-project % forge create src/IBT.sol:IBT \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --legacy \ --broadcast
+error: unexpected argument ' --broadcast' found
+
+Usage: forge create [OPTIONS] <CONTRACT>
+
+For more information, try '--help'.
+cris@MacBook-Pro-Cristian foundry-project % forge create src/IBT.sol:IBT \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --legacy \
+  --broadcast
+[⠊] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Transaction hash: 0xb07f7238af38cedf125033d8943a4903adc18dd6fdbd6377b6b0d22d6b8dd467
+cris@MacBook-Pro-Cristian foundry-project % sui client publish . --gas-budget 30000
+
+Unable to find package manifest at '/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/foundry-project/Move.toml' or in its parents
+cris@MacBook-Pro-Cristian foundry-project % cd ..
+cris@MacBook-Pro-Cristian project % sui new sui-project                    
+error: unrecognized subcommand 'new'
+
+  tip: a similar subcommand exists: 'network'
+
+Usage: sui <COMMAND>
+
+For more information, try '--help'.
+cris@MacBook-Pro-Cristian project % cd cryptoProjectSui 
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+Warning: unknown field name found. Expected one of [name, authors, license, edition, flavor, published-at, version], but found 'publish'
+Failed to build Move modules: Error parsing '[package]' section of manifest
+
+Caused by:
+    Field `publish` value must be a string.
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+Failed to build Move modules: Error parsing '[package]' section of manifest
+
+Caused by:
+    Invalid 'edition'. Unsupported edition "2023". Current supported editions include: "legacy", "2024.alpha", "2024.beta", and "2024".
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+BUILDING sui_project
+error[E03001]: address with no value
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:1:8
+  │
+1 │ module my_package::ibt {
+  │        ^^^^^^^^^^ address 'my_package' is not assigned a value. Try assigning it a value when calling the compiler
+
+error[E03001]: address with no value
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:2:9
+  │
+2 │     use std::error;
+  │         ^^^ address 'std' is not assigned a value
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:2:9
+  │
+2 │     use std::error;
+  │         ^^^^^^^^^^ Invalid 'use'. Unbound module: 'std::error'
+
+error[E03001]: address with no value
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:3:9
+  │
+3 │     use std::signer;
+  │         ^^^ address 'std' is not assigned a value
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:3:9
+  │
+3 │     use std::signer;
+  │         ^^^^^^^^^^^ Invalid 'use'. Unbound module: 'std::signer'
+
+error[E03001]: address with no value
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:4:9
+  │
+4 │     use std::tx_context;
+  │         ^^^ address 'std' is not assigned a value
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:4:9
+  │
+4 │     use std::tx_context;
+  │         ^^^^^^^^^^^^^^^ Invalid 'use'. Unbound module: 'std::tx_context'
+
+error[E03001]: address with no value
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:5:9
+  │
+5 │     use std::string;
+  │         ^^^ address 'std' is not assigned a value
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:5:9
+  │
+5 │     use std::string;
+  │         ^^^^^^^^^^^ Invalid 'use'. Unbound module: 'std::string'
+
+error[E01003]: invalid modifier
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:8:5
+  │
+8 │     struct IBTCoin has key, store { }
+  │     ^^^^^^ Invalid struct declaration. Internal struct declarations are not yet supported
+  │
+  = Visibility annotations are required on struct declarations from the Move 2024 edition onwards.
+
+error[Sui E02007]: invalid object declaration
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:8:12
+  │
+8 │     struct IBTCoin has key, store { }
+  │            ^^^^^^^     --- The 'key' ability is used to declare objects in Sui
+  │            │            
+  │            Invalid object 'IBTCoin'. Structs with the 'key' ability must have 'id: sui::object::UID' as their first field
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:11:9
+   │
+11 │         admin: &signer,
+   │         ^^^^^ Unused parameter 'admin'. Consider removing or prefixing with an underscore: '_admin'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:12:9
+   │
+12 │         ctx: &mut TxContext
+   │         ^^^ Unused parameter 'ctx'. Consider removing or prefixing with an underscore: '_ctx'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:12:19
+   │
+12 │         ctx: &mut TxContext
+   │                   ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:19:9
+   │
+19 │         admin: &signer,
+   │         ^^^^^ Unused parameter 'admin'. Consider removing or prefixing with an underscore: '_admin'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:20:9
+   │
+20 │         recipient: address,
+   │         ^^^^^^^^^ Unused parameter 'recipient'. Consider removing or prefixing with an underscore: '_recipient'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:21:9
+   │
+21 │         amount: u64,
+   │         ^^^^^^ Unused parameter 'amount'. Consider removing or prefixing with an underscore: '_amount'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:22:9
+   │
+22 │         ctx: &mut TxContext
+   │         ^^^ Unused parameter 'ctx'. Consider removing or prefixing with an underscore: '_ctx'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:22:19
+   │
+22 │         ctx: &mut TxContext
+   │                   ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:29:9
+   │
+29 │         owner: &signer,
+   │         ^^^^^ Unused parameter 'owner'. Consider removing or prefixing with an underscore: '_owner'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:30:9
+   │
+30 │         amount: u64,
+   │         ^^^^^^ Unused parameter 'amount'. Consider removing or prefixing with an underscore: '_amount'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:31:9
+   │
+31 │         ctx: &mut TxContext
+   │         ^^^ Unused parameter 'ctx'. Consider removing or prefixing with an underscore: '_ctx'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:31:19
+   │
+31 │         ctx: &mut TxContext
+   │                   ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+Failed to build Move modules: Compilation error.
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+BUILDING sui_project
+error[E01002]: unexpected token
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:1:8
+  │
+1 │ module {{sender}}::ibt {
+  │        ^
+  │        │
+  │        Unexpected '{'
+  │        Expected an address or an identifier
+
+Failed to build Move modules: Compilation error.
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+BUILDING sui_project
+error[E01002]: unexpected token
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:1:8
+  │
+1 │ module {{sender}}::ibt {
+  │        ^
+  │        │
+  │        Unexpected '{'
+  │        Expected an address or an identifier
+
+Failed to build Move modules: Compilation error.
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+BUILDING sui_project
+error[E03001]: address with no value
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:2:9
+  │
+2 │     use sui::object::{Self, UID};
+  │         ^^^ address 'sui' is not assigned a value
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:2:9
+  │
+2 │     use sui::object::{Self, UID};
+  │         ^^^^^^^^^^^ Invalid 'use'. Unbound module: 'sui::object'
+
+error[E03001]: address with no value
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:3:9
+  │
+3 │     use sui::tx_context::{Self, TxContext};
+  │         ^^^ address 'sui' is not assigned a value
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:3:9
+  │
+3 │     use sui::tx_context::{Self, TxContext};
+  │         ^^^^^^^^^^^^^^^ Invalid 'use'. Unbound module: 'sui::tx_context'
+
+error[E01003]: invalid modifier
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:5:5
+  │
+5 │     struct IBTCoin has key, store {
+  │     ^^^^^^ Invalid struct declaration. Internal struct declarations are not yet supported
+  │
+  = Visibility annotations are required on struct declarations from the Move 2024 edition onwards.
+
+error[Sui E02007]: invalid object declaration
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:6:9
+  │
+5 │     struct IBTCoin has key, store {
+  │                        --- The 'key' ability is used to declare objects in Sui
+6 │         id: UID
+  │         ^^  --- But found type: '_'
+  │         │    
+  │         Invalid object 'IBTCoin'. Structs with the 'key' ability must have 'id: sui::object::UID' as their first field
+
+error[E03004]: unbound type
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:6:13
+  │
+6 │         id: UID
+  │             ^^^ Unbound type 'UID' in current scope
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:11:31
+   │
+11 │     public entry fun init_ibt(ctx: &mut TxContext) {
+   │                               ^^^ Unused parameter 'ctx'. Consider removing or prefixing with an underscore: '_ctx'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:11:41
+   │
+11 │     public entry fun init_ibt(ctx: &mut TxContext) {
+   │                                         ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:13:13
+   │
+13 │         let new_coin = IBTCoin {
+   │             ^^^^^^^^ Unused local variable 'new_coin'. Consider removing or prefixing with an underscore: '_new_coin'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03006]: unexpected name in this position
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:14:17
+   │
+14 │             id: object::new(ctx),  // create a fresh UID
+   │                 ^^^^^^ Could not resolve the name 'object'
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:23:62
+   │
+23 │     public entry fun mint(_recipient: address, _amount: u64, ctx: &mut TxContext) {
+   │                                                              ^^^ Unused parameter 'ctx'. Consider removing or prefixing with an underscore: '_ctx'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:23:72
+   │
+23 │     public entry fun mint(_recipient: address, _amount: u64, ctx: &mut TxContext) {
+   │                                                                        ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:29:69
+   │
+29 │     public entry fun burn(_owner: &signer, _amount: u64, _ctx: &mut TxContext) {
+   │                                                                     ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+Failed to build Move modules: Compilation error.
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+BUILDING sui_project
+error[E01002]: unexpected token
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:1:12
+  │
+1 │ address 0x0;
+  │            ^
+  │            │
+  │            Unexpected ';'
+  │            Expected '{'
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:4:9
+  │
+4 │     use 0x2::object::{UID, new};
+  │         ^^^^^^^^^^^ Invalid 'use'. Unbound module: '0x2::object'
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:5:9
+  │
+5 │     use 0x2::signer::Signer;
+  │         ^^^^^^^^^^^ Invalid 'use'. Unbound module: '0x2::signer'
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:6:9
+  │
+6 │     use 0x2::tx_context::TxContext;
+  │         ^^^^^^^^^^^^^^^ Invalid 'use'. Unbound module: '0x2::tx_context'
+
+error[Sui E02007]: invalid object declaration
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:11:9
+   │
+10 │     public struct IBTCoin has key, store {
+   │                               --- The 'key' ability is used to declare objects in Sui
+11 │         id: UID
+   │         ^^  --- But found type: '_'
+   │         │    
+   │         Invalid object 'IBTCoin'. Structs with the 'key' ability must have 'id: sui::object::UID' as their first field
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:11:13
+   │
+11 │         id: UID
+   │             ^^^ Unbound type 'UID' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:15:41
+   │
+15 │     public entry fun init_ibt(ctx: &mut TxContext) {
+   │                                         ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:16:13
+   │
+16 │         let new_coin = IBTCoin {
+   │             ^^^^^^^^ Unused local variable 'new_coin'. Consider removing or prefixing with an underscore: '_new_coin'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03005]: unbound unscoped name
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:17:17
+   │
+17 │             id: new(ctx)
+   │                 ^^^ Unbound function 'new' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:26:73
+   │
+26 │     public entry fun mint(_recipient: address, _amount: u64, _ctx: &mut TxContext) {
+   │                                                                         ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:31:36
+   │
+31 │     public entry fun burn(_owner: &Signer, _amount: u64, _ctx: &mut TxContext) {
+   │                                    ^^^^^^ Unbound type 'Signer' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:31:69
+   │
+31 │     public entry fun burn(_owner: &Signer, _amount: u64, _ctx: &mut TxContext) {
+   │                                                                     ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+Failed to build Move modules: Compilation error.
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui client publish . --gas-budget 30000
+
+BUILDING sui_project
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:7:9
+  │
+7 │     use 0x2::sui::tx_context::TxContext;
+  │         ^^^^^^^^ Invalid 'use'. Unbound module: '0x2::sui'
+
+error[E01002]: unexpected token
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:7:29
+  │
+7 │     use 0x2::sui::tx_context::TxContext;
+  │                             ^^
+  │                             │
+  │                             Unexpected '::'
+  │                             Expected ';'
+
+error[E03002]: unbound module
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:8:9
+  │
+8 │     use 0x2::sui::object::{UID, new};
+  │         ^^^^^^^^ Invalid 'use'. Unbound module: '0x2::sui'
+
+error[E01002]: unexpected token
+  ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:8:25
+  │
+8 │     use 0x2::sui::object::{UID, new};
+  │                         ^^
+  │                         │
+  │                         Unexpected '::'
+  │                         Expected ';'
+
+error[E01003]: invalid modifier
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:12:5
+   │
+12 │     public struct IBTCoin has key, store {
+   │     ^^^^^^ Invalid struct declaration. Structs cannot have visibility modifiers as they are always 'public'
+   │
+   = Starting in the Move 2024 edition visibility must be annotated on struct declarations.
+
+error[E13001]: feature is not supported in specified edition
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:12:5
+   │
+12 │     public struct IBTCoin has key, store {
+   │     ^^^^^^ Struct visibility modifiers are not supported by current edition 'legacy'; the '2024' edition supports this feature
+   │
+   = You can update the edition in the 'Move.toml', or via command line flag if invoking the compiler directly.
+
+error[Sui E02007]: invalid object declaration
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:13:9
+   │
+12 │     public struct IBTCoin has key, store {
+   │                               --- The 'key' ability is used to declare objects in Sui
+13 │         id: UID
+   │         ^^  --- But found type: '_'
+   │         │    
+   │         Invalid object 'IBTCoin'. Structs with the 'key' ability must have 'id: sui::object::UID' as their first field
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:13:13
+   │
+13 │         id: UID
+   │             ^^^ Unbound type 'UID' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:17:41
+   │
+17 │     public entry fun init_ibt(ctx: &mut TxContext) {
+   │                                         ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+warning[W09002]: unused variable
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:18:13
+   │
+18 │         let new_coin = IBTCoin {
+   │             ^^^^^^^^ Unused local variable 'new_coin'. Consider removing or prefixing with an underscore: '_new_coin'
+   │
+   = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+error[E03005]: unbound unscoped name
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:19:17
+   │
+19 │             id: new(ctx)
+   │                 ^^^ Unbound function 'new' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:28:73
+   │
+28 │     public entry fun mint(_recipient: address, _amount: u64, _ctx: &mut TxContext) {
+   │                                                                         ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:33:36
+   │
+33 │     public entry fun burn(_owner: &Signer, _amount: u64, _ctx: &mut TxContext) {
+   │                                    ^^^^^^ Unbound type 'Signer' in current scope
+
+error[E03004]: unbound type
+   ┌─ /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/cryptoProjectSui/sources/ibt.move:33:69
+   │
+33 │     public entry fun burn(_owner: &Signer, _amount: u64, _ctx: &mut TxContext) {
+   │                                                                     ^^^^^^^^^ Unbound type 'TxContext' in current scope
+
+Failed to build Move modules: Compilation error.
+cris@MacBook-Pro-Cristian cryptoProjectSui % sui --version
+sui 1.39.3-homebrew
+cris@MacBook-Pro-Cristian cryptoProjectSui % 

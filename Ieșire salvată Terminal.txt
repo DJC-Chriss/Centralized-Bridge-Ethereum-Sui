@@ -1,0 +1,1540 @@
+Last login: Mon Dec 16 20:21:09 on ttys000
+cris@MacBook-Pro-Cristian ~ % foundryup --version
+cris@MacBook-Pro-Cristian ~ % which foundryup
+/Users/cris/.foundry/bin/foundryup
+cris@MacBook-Pro-Cristian ~ % brew list
+==> Formulae
+autoconf	ccache		icu4c@76	openssl@3	z3
+automake	cmake		libtool		pkgconf		zstd
+blake3		fmt		lz4		solidity
+boost		hashcat		m4		xxhash
+ca-certificates	hiredis		minizip		xz
+
+==> Casks
+cris@MacBook-Pro-Cristian ~ % brew uses z3
+Usage: brew uses [options] formula [...]
+
+Show formulae and casks that specify formula as a dependency; that is, show
+dependents of formula. When given multiple formula arguments, show the
+intersection of formulae that use formula. By default, uses shows all
+formulae and casks that specify formula as a required or recommended
+dependency for their stable builds.
+
+Note: --missing and --skip-recommended have precedence over --include-*.
+
+      --recursive                  Resolve more than one level of dependencies.
+      --installed                  Only list formulae and casks that are
+                                   currently installed.
+      --missing                    Only list formulae and casks that are not
+                                   currently installed.
+      --eval-all                   Evaluate all available formulae and casks,
+                                   whether installed or not, to show their
+                                   dependents.
+      --include-build              Include formulae that specify formula as a
+                                   :build dependency.
+      --include-test               Include formulae that specify formula as a
+                                   :test dependency.
+      --include-optional           Include formulae that specify formula as an
+                                   :optional dependency.
+      --skip-recommended           Skip all formulae that specify formula as a
+                                   :recommended dependency.
+      --formula, --formulae        Include only formulae.
+      --cask, --casks              Include only casks.
+  -d, --debug                      Display any debugging information.
+  -q, --quiet                      Make some output more quiet.
+  -v, --verbose                    Make some output more verbose.
+  -h, --help                       Show this message.
+
+Error: Invalid usage: `brew uses` needs `--installed` or `--eval-all` passed or `HOMEBREW_EVAL_ALL` set!
+cris@MacBook-Pro-Cristian ~ % brew uses --installed z3
+
+solidity
+cris@MacBook-Pro-Cristian ~ % sui --version
+zsh: command not found: sui
+cris@MacBook-Pro-Cristian ~ % brew install sui
+==> Auto-updating Homebrew...
+Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+azurehound                 leetcode-cli               s5cmd
+bender                     legba                      sendme
+bruno-cli                  libkeyfinder               sentry-cli
+cargo-public-api           librime                    sfsexp
+cargo-shuttle              limbo                      slepc
+crates-tui                 macmon                     slepc-complex
+dry                        mago                       spytrap-adb
+fairy-stockfish            malcontent                 starlark-rust
+glaze                      marisa                     synchrony
+go-blueprint               mdz                        talosctl
+gopeed                     mmdbctl                    tenere
+graphql-inspector          parca                      tomcat@10
+gsan                       parlay                     tuisky
+gurk                       pixi-pack                  typeshare
+heroku                     posting                    tzdb
+hgrep                      pscale                     vals
+jwt-cli                    qbec                       versitygw
+kool                       rapidyaml                  vo-amrwbenc
+kubernetes-cli@1.31        replxx                     wails
+kubetrim                   repren                     watcher
+languagetool-rust          reveal-md                  zsh-f-sy-h
+==> New Casks
+bookmacster@beta                         font-triodion
+dehesselle-meld                          font-udev-gothic-hs
+font-bravura                             halion-sonic
+font-moralerspace                        mouseless
+font-moralerspace-hw                     rode-virtual-channels
+font-moralerspace-hw-jpdoc               soundsource@test
+font-moralerspace-hw-nf                  stratoshark
+font-moralerspace-jpdoc                  superwhisper
+font-moralerspace-nf                     supremo
+font-tagesschrift
+
+You have 5 outdated formulae installed.
+
+==> Downloading https://ghcr.io/v2/homebrew/core/sui/manifests/1.39.3
+######################################################################### 100.0%
+==> Fetching sui
+==> Downloading https://ghcr.io/v2/homebrew/core/sui/blobs/sha256:79b2bc88f36df8
+######################################################################### 100.0%
+==> Pouring sui--1.39.3.arm64_sonoma.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/sui/1.39.3: 9 files, 141.8MB
+==> Running `brew cleanup sui`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+cris@MacBook-Pro-Cristian ~ % brew list
+==> Formulae
+autoconf	ccache		icu4c@76	openssl@3	xz
+automake	cmake		libtool		pkgconf		z3
+blake3		fmt		lz4		solidity	zstd
+boost		hashcat		m4		sui
+ca-certificates	hiredis		minizip		xxhash
+
+==> Casks
+cris@MacBook-Pro-Cristian ~ % brew deps --installed sui
+cris@MacBook-Pro-Cristian ~ % brew autoremove
+
+==> Autoremoving 5 unneeded formulae:
+blake3
+ccache
+cmake
+fmt
+hiredis
+Uninstalling /opt/homebrew/Cellar/ccache/4.10.2_1... (82 files, 1.4MB)
+Uninstalling /opt/homebrew/Cellar/cmake/3.31.2... (3,767 files, 56.5MB)
+Uninstalling /opt/homebrew/Cellar/blake3/1.5.5... (13 files, 94.5KB)
+Uninstalling /opt/homebrew/Cellar/fmt/11.0.2... (29 files, 1MB)
+Uninstalling /opt/homebrew/Cellar/hiredis/1.2.0... (53 files, 494.9KB)
+cris@MacBook-Pro-Cristian ~ % brew cleanup
+
+Warning: Skipping boost: most recent version 1.87.0 not installed
+Removing: /Users/cris/Library/Caches/Homebrew/boost--1.86.0_2... (97.0MB)
+Removing: /opt/homebrew/Cellar/ca-certificates/2024-09-24... (4 files, 237.4KB)
+Removing: /Users/cris/Library/Caches/Homebrew/ca-certificates_bottle_manifest--2024-09-24... (1.9KB)
+Warning: Skipping libtool: most recent version 2.5.4 not installed
+Warning: Skipping solidity: most recent version 0.8.28_1 not installed
+Removing: /Users/cris/Library/Caches/Homebrew/solidity--0.8.28... (5.1MB)
+Warning: Skipping z3: most recent version 4.13.4 not installed
+Removing: /Users/cris/Library/Caches/Homebrew/z3--4.13.3... (12.2MB)
+Removing: /Users/cris/Library/Caches/Homebrew/libdeflate--1.22... (108.0KB)
+Removing: /Users/cris/Library/Caches/Homebrew/cmake--3.31.2... (16.9MB)
+Removing: /Users/cris/Library/Caches/Homebrew/gettext--0.22.5... (8.8MB)
+Removing: /Users/cris/Library/Caches/Homebrew/glib--2.82.2... (8.5MB)
+Removing: /Users/cris/Library/Caches/Homebrew/libxcb--1.17.0... (977.2KB)
+Removing: /Users/cris/Library/Caches/Homebrew/openjpeg--2.5.2... (2MB)
+Removing: /Users/cris/Library/Caches/Homebrew/pyqt--6.7.1_1... (6.5MB)
+Removing: /Users/cris/Library/Caches/Homebrew/libxau--1.0.11... (30KB)
+Removing: /Users/cris/Library/Caches/Homebrew/libxrender--0.9.11... (51.6KB)
+Removing: /Users/cris/Library/Caches/Homebrew/vtk--9.3.1_2... (42.6MB)
+Removing: /opt/homebrew/Library/Homebrew/vendor/portable-ruby/3.3.5... (1,595 files, 32.1MB)
+==> This operation has freed approximately 233.2MB of disk space.
+cris@MacBook-Pro-Cristian ~ % brew search chrome
+==> Formulae
+chrome-cli      chrome-export   chroma          rome            chrony
+
+==> Casks
+chime                                    google-chrome
+chrome-devtools                          google-chrome@beta
+chrome-remote-desktop-host               google-chrome@canary
+chromedriver                             google-chrome@dev
+chromedriver@beta                        mkchromecast
+epichrome
+cris@MacBook-Pro-Cristian ~ % brew list
+==> Formulae
+autoconf	hashcat		m4		solidity	z3
+automake	icu4c@76	minizip		sui		zstd
+boost		libtool		openssl@3	xxhash
+ca-certificates	lz4		pkgconf		xz
+
+==> Casks
+cris@MacBook-Pro-Cristian ~ % npm -- version
+zsh: command not found: npm
+cris@MacBook-Pro-Cristian ~ % brew install node
+==> Downloading https://formulae.brew.sh/api/formula.jws.json
+######################################################################### 100.0%
+==> Downloading https://formulae.brew.sh/api/cask.jws.json
+######################################################################### 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/node/manifests/23.5.0
+######################################################################### 100.0%
+==> Fetching dependencies for node: brotli, c-ares, libnghttp2 and libuv
+==> Downloading https://ghcr.io/v2/homebrew/core/brotli/manifests/1.1.0-1
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/565098509cdfa90593ec9a41b41239f073843f88caed60ddaa3e6194ac4defda--brotli-1.1.0-1.bottle_manifest.json
+==> Fetching brotli
+==> Downloading https://ghcr.io/v2/homebrew/core/brotli/blobs/sha256:2a95140d611
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/b3852b9f89602b27a98dbdfbcb74ccadfe3ee37647a8643e70d9b71de1e2d621--brotli--1.1.0.arm64_sonoma.bottle.1.tar.gz
+==> Downloading https://ghcr.io/v2/homebrew/core/c-ares/manifests/1.34.4
+######################################################################### 100.0%
+==> Fetching c-ares
+==> Downloading https://ghcr.io/v2/homebrew/core/c-ares/blobs/sha256:93b4eabc07d
+######################################################################### 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/libnghttp2/manifests/1.64.0
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/ca092fa9d99f26d52103722d42230c00f21eb8a4a36bf1d40fc9d5f798562d92--libnghttp2-1.64.0.bottle_manifest.json
+==> Fetching libnghttp2
+==> Downloading https://ghcr.io/v2/homebrew/core/libnghttp2/blobs/sha256:13eddf4
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/f1b45e06a4c2fece03bc18485af6ae774831af83c7b781b9bbc41110887866f6--libnghttp2--1.64.0.arm64_sonoma.bottle.tar.gz
+==> Downloading https://ghcr.io/v2/homebrew/core/libuv/manifests/1.49.2
+######################################################################### 100.0%
+==> Fetching libuv
+==> Downloading https://ghcr.io/v2/homebrew/core/libuv/blobs/sha256:bf7e4fc58b40
+######################################################################### 100.0%
+==> Fetching node
+==> Downloading https://ghcr.io/v2/homebrew/core/node/blobs/sha256:7be45142d2397
+######################################################################### 100.0%
+==> Installing dependencies for node: brotli, c-ares, libnghttp2 and libuv
+==> Installing node dependency: brotli
+==> Downloading https://ghcr.io/v2/homebrew/core/brotli/manifests/1.1.0-1
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/565098509cdfa90593ec9a41b41239f073843f88caed60ddaa3e6194ac4defda--brotli-1.1.0-1.bottle_manifest.json
+==> Pouring brotli--1.1.0.arm64_sonoma.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/brotli/1.1.0: 25 files, 1015.9KB
+==> Installing node dependency: c-ares
+==> Downloading https://ghcr.io/v2/homebrew/core/c-ares/manifests/1.34.4
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/ce18ea81ad6f8aa82ed3f311879deb7643a3d71e18776db6bc86995282d330f3--c-ares-1.34.4.bottle_manifest.json
+==> Pouring c-ares--1.34.4.arm64_sonoma.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/c-ares/1.34.4: 176 files, 1MB
+==> Installing node dependency: libnghttp2
+==> Downloading https://ghcr.io/v2/homebrew/core/libnghttp2/manifests/1.64.0
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/ca092fa9d99f26d52103722d42230c00f21eb8a4a36bf1d40fc9d5f798562d92--libnghttp2-1.64.0.bottle_manifest.json
+==> Pouring libnghttp2--1.64.0.arm64_sonoma.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libnghttp2/1.64.0: 14 files, 794.2KB
+==> Installing node dependency: libuv
+==> Downloading https://ghcr.io/v2/homebrew/core/libuv/manifests/1.49.2
+Already downloaded: /Users/cris/Library/Caches/Homebrew/downloads/a32b5abd59fa5add407c237e71c8ccb52eca9bed1740be5e315b1bea6efde148--libuv-1.49.2.bottle_manifest.json
+==> Pouring libuv--1.49.2.arm64_sonoma.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libuv/1.49.2: 20 files, 1.2MB
+==> Installing node
+==> Pouring node--23.5.0.arm64_sonoma.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/node/23.5.0: 2,602 files, 87.7MB
+==> Running `brew cleanup node`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+cris@MacBook-Pro-Cristian ~ % npm --version
+10.9.2
+cris@MacBook-Pro-Cristian ~ % cd /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+cris@MacBook-Pro-Cristian project % npm init -y
+Wrote to /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/package.json:
+
+{
+  "name": "project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+cris@MacBook-Pro-Cristian project % npm --version
+10.9.2
+cris@MacBook-Pro-Cristian project % npm i --save @mysten/dapp-kit @mysten/sui @tanstack/react-query
+npm warn ERESOLVE overriding peer dependency
+npm warn deprecated @simplewebauthn/typescript-types@7.4.0: This package has been renamed to @simplewebauthn/types. Please install @simplewebauthn/types instead to ensure you receive future updates.
+
+added 98 packages, and audited 99 packages in 15s
+
+11 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+cris@MacBook-Pro-Cristian project % npm list --depth=0
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├── @mysten/dapp-kit@0.14.44
+├── @mysten/sui@1.18.0
+└── @tanstack/react-query@5.62.8
+
+cris@MacBook-Pro-Cristian project % npm list          
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├── @mysten/dapp-kit@0.14.44
+├── @mysten/sui@1.18.0
+└── @tanstack/react-query@5.62.8
+
+cris@MacBook-Pro-Cristian project % npm i @web3-onboard/metamask
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: use-sync-external-store@1.2.2
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   33 more (@mysten/dapp-kit, @radix-ui/react-arrow, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn node_modules/zustand/node_modules/use-sync-external-store
+npm warn   use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn   node_modules/zustand
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn   node_modules/zustand/node_modules/use-sync-external-store
+npm warn     use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn     node_modules/zustand
+npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+
+added 618 packages, and audited 717 packages in 28s
+
+72 packages are looking for funding
+  run `npm fund` for details
+
+4 high severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % cd public 
+cris@MacBook-Pro-Cristian public % touch index.html
+cris@MacBook-Pro-Cristian public % cd ..
+cris@MacBook-Pro-Cristian project % npm install --save-dev lite-server
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: use-sync-external-store@1.2.2
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   33 more (@mysten/dapp-kit, @radix-ui/react-arrow, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn node_modules/zustand/node_modules/use-sync-external-store
+npm warn   use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn   node_modules/zustand
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn   node_modules/zustand/node_modules/use-sync-external-store
+npm warn     use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn     node_modules/zustand
+
+added 95 packages, and audited 812 packages in 5s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+10 vulnerabilities (2 low, 3 moderate, 5 high)
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm list ethers
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+└── (empty)
+
+cris@MacBook-Pro-Cristian project % npm install ethers
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: use-sync-external-store@1.2.2
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   33 more (@mysten/dapp-kit, @radix-ui/react-arrow, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn node_modules/zustand/node_modules/use-sync-external-store
+npm warn   use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn   node_modules/zustand
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn   node_modules/zustand/node_modules/use-sync-external-store
+npm warn     use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn     node_modules/zustand
+
+added 9 packages, and audited 821 packages in 6s
+
+77 packages are looking for funding
+  run `npm fund` for details
+
+10 vulnerabilities (2 low, 3 moderate, 5 high)
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm start
+
+> project@1.0.0 start
+> lite-server
+
+Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-server defaults...
+** browser-sync config **
+{
+  injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server: {
+    baseDir: './',
+    middleware: [ [Function (anonymous)], [Function (anonymous)] ]
+  }
+}
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.1.135:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://localhost:3001
+ --------------------------------------
+[Browsersync] Serving files from: ./
+[Browsersync] Watching files...
+24.12.21 21:41:18 404 GET /index.html
+24.12.21 21:41:18 404 GET /favicon.ico
+^C
+cris@MacBook-Pro-Cristian project % touch bs-config.json
+
+cris@MacBook-Pro-Cristian project % npm start
+
+> project@1.0.0 start
+> lite-server
+
+** browser-sync config **
+{
+  injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server: {
+    baseDir: 'public',
+    middleware: [ [Function (anonymous)], [Function (anonymous)] ]
+  }
+}
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.1.135:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://localhost:3001
+ --------------------------------------
+[Browsersync] Serving files from: public
+[Browsersync] Watching files...
+24.12.21 21:46:06 200 GET /index.html
+24.12.21 21:46:06 404 GET /src/app.js
+24.12.21 21:46:06 200 GET /styles.css
+24.12.21 22:08:18 304 GET /styles.css
+[Browsersync] Reloading Browsers...
+24.12.21 22:30:25 200 GET /index.html
+24.12.21 22:30:25 304 GET /styles.css
+24.12.21 22:30:25 404 GET /public/app.js
+[Browsersync] Reloading Browsers...
+24.12.21 22:31:35 200 GET /index.html
+24.12.21 22:31:35 304 GET /styles.css
+24.12.21 22:31:35 200 GET /app.js
+^C
+cris@MacBook-Pro-Cristian project % sui -- version
+error: unrecognized subcommand 'version'
+
+Usage: sui <COMMAND>
+
+For more information, try '--help'.
+cris@MacBook-Pro-Cristian project % sui --version 
+sui 1.39.3-homebrew
+cris@MacBook-Pro-Cristian project % npm start     
+
+> project@1.0.0 start
+> lite-server
+
+** browser-sync config **
+{
+  injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server: {
+    baseDir: 'public',
+    middleware: [ [Function (anonymous)], [Function (anonymous)] ]
+  }
+}
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.1.135:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://localhost:3001
+ --------------------------------------
+[Browsersync] Serving files from: public
+[Browsersync] Watching files...
+24.12.21 22:51:08 304 GET /index.html
+24.12.21 22:51:08 304 GET /styles.css
+24.12.21 22:51:08 304 GET /app.js
+24.12.21 22:51:54 304 GET /styles.css
+[Browsersync] Reloading Browsers...
+24.12.21 22:57:14 200 GET /index.html
+24.12.21 22:57:14 304 GET /styles.css
+^C
+cris@MacBook-Pro-Cristian project % npm start
+
+> project@1.0.0 start
+> lite-server
+
+** browser-sync config **
+{
+  injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server: {
+    baseDir: 'public',
+    middleware: [ [Function (anonymous)], [Function (anonymous)] ]
+  }
+}
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.1.135:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://localhost:3001
+ --------------------------------------
+[Browsersync] Serving files from: public
+[Browsersync] Watching files...
+24.12.21 22:59:17 304 GET /index.html
+24.12.21 22:59:17 304 GET /styles.css
+24.12.21 22:59:29 304 GET /styles.css
+^C
+cris@MacBook-Pro-Cristian project % npm start
+
+> project@1.0.0 start
+> lite-server
+
+** browser-sync config **
+{
+  injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server: {
+    baseDir: 'public',
+    middleware: [ [Function (anonymous)], [Function (anonymous)] ]
+  }
+}
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.1.135:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://localhost:3001
+ --------------------------------------
+[Browsersync] Serving files from: public
+[Browsersync] Watching files...
+24.12.21 23:02:19 200 GET /index.html
+24.12.21 23:02:19 304 GET /styles.css
+24.12.21 23:02:26 304 GET /styles.css
+[Browsersync] Reloading Browsers...
+24.12.21 23:04:07 200 GET /index.html
+24.12.21 23:04:07 304 GET /styles.css
+^C
+cris@MacBook-Pro-Cristian project % npm start
+
+> project@1.0.0 start
+> lite-server
+
+** browser-sync config **
+{
+  injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server: {
+    baseDir: 'public',
+    middleware: [ [Function (anonymous)], [Function (anonymous)] ]
+  }
+}
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.1.135:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://localhost:3001
+ --------------------------------------
+[Browsersync] Serving files from: public
+[Browsersync] Watching files...
+24.12.21 23:04:24 304 GET /index.html
+24.12.21 23:04:24 304 GET /styles.css
+24.12.21 23:04:32 304 GET /styles.css
+^C
+cris@MacBook-Pro-Cristian project % npm install vite --save-dev
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: use-sync-external-store@1.2.2
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   33 more (@mysten/dapp-kit, @radix-ui/react-arrow, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn node_modules/zustand/node_modules/use-sync-external-store
+npm warn   use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn   node_modules/zustand
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn   node_modules/zustand/node_modules/use-sync-external-store
+npm warn     use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn     node_modules/zustand
+
+added 9 packages, and audited 830 packages in 7s
+
+80 packages are looking for funding
+  run `npm fund` for details
+
+10 vulnerabilities (2 low, 3 moderate, 5 high)
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm run dev
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v6.0.5  ready in 265 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+23:38:54 [vite] (client) page reload index.html
+23:38:54 [vite] (ssr) page reload index.html (x2)
+23:39:10 [vite] (client) page reload main.js
+23:39:11 [vite] Pre-transform error: Failed to resolve import "@web3-onboard/core" from "src/main.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/src/main.js:2:22
+  1  |  // Import Web3-Onboard libraries
+  2  |  import Onboard from '@web3-onboard/core';
+     |                       ^
+  3  |  import metamaskModule from '@web3-onboard/metamask';
+  4  |  
+23:39:11 [vite] Internal server error: Failed to resolve import "@web3-onboard/core" from "src/main.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/src/main.js:2:22
+  1  |  // Import Web3-Onboard libraries
+  2  |  import Onboard from '@web3-onboard/core';
+     |                       ^
+  3  |  import metamaskModule from '@web3-onboard/metamask';
+  4  |  
+      at TransformPluginContext._formatError (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:47372:41)
+      at TransformPluginContext.error (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:47367:16)
+      at normalizeUrl (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:45633:23)
+      at async file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:45752:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:45679:7)
+      at async EnvironmentPluginContainer.transform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:47214:18)
+      at async loadAndTransform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:41025:27)
+      at async viteTransformMiddleware (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:42469:24)
+23:39:12 [vite] (client) ✨ new dependencies optimized: @web3-onboard/metamask, @mysten/dapp-kit
+^C
+cris@MacBook-Pro-Cristian project % npm run dev
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v6.0.5  ready in 87 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+23:42:05 [vite] Pre-transform error: Failed to resolve import "@web3-onboard/core" from "src/main.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/src/main.js:2:22
+  1  |  // Import Web3-Onboard libraries
+  2  |  import Onboard from '@web3-onboard/core';
+     |                       ^
+  3  |  import metamaskModule from '@web3-onboard/metamask';
+  4  |  
+23:42:05 [vite] Pre-transform error: Failed to resolve import "@web3-onboard/core" from "src/main.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/src/main.js:2:22
+  1  |  // Import Web3-Onboard libraries
+  2  |  import Onboard from '@web3-onboard/core';
+     |                       ^
+  3  |  import metamaskModule from '@web3-onboard/metamask';
+  4  |   (x2)
+23:42:05 [vite] Internal server error: Failed to resolve import "@web3-onboard/core" from "src/main.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/src/main.js:2:22
+  1  |  // Import Web3-Onboard libraries
+  2  |  import Onboard from '@web3-onboard/core';
+     |                       ^
+  3  |  import metamaskModule from '@web3-onboard/metamask';
+  4  |  
+      at TransformPluginContext._formatError (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:47372:41)
+      at TransformPluginContext.error (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:47367:16)
+      at normalizeUrl (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:45633:23)
+      at async file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:45752:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:45679:7)
+      at async EnvironmentPluginContainer.transform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:47214:18)
+      at async loadAndTransform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:41025:27)
+      at async viteTransformMiddleware (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-BZMjGe_U.js:42469:24)
+^C
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/core @web3-onboard/metamask
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+└── @web3-onboard/metamask@2.2.0 invalid: "^2.2.1" from the root project
+
+npm error code ELSPROBLEMS
+npm error invalid: @web3-onboard/metamask@2.2.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/@web3-onboard/metamask
+npm error A complete log of this run can be found in: /Users/cris/.npm/_logs/2024-12-21T21_44_05_961Z-debug-0.log
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/core @web3-onboard/metamask
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+└── @web3-onboard/metamask@2.2.0
+
+cris@MacBook-Pro-Cristian project % npm install @web3-onboard/core
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: use-sync-external-store@1.2.2
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   33 more (@mysten/dapp-kit, @radix-ui/react-arrow, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn node_modules/zustand/node_modules/use-sync-external-store
+npm warn   use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn   node_modules/zustand
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn   node_modules/zustand/node_modules/use-sync-external-store
+npm warn     use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn     node_modules/zustand
+
+added 42 packages, removed 104 packages, changed 4 packages, and audited 768 packages in 11s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (2 moderate, 4 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/core @web3-onboard/metamask
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├── @web3-onboard/core@2.23.0
+└── @web3-onboard/metamask@2.2.0
+
+cris@MacBook-Pro-Cristian project % npm run dev
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 161 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+cris@MacBook-Pro-Cristian project % npm ls @mysten/dapp-kit
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+└── @mysten/dapp-kit@0.14.44
+
+cris@MacBook-Pro-Cristian project % npm run dev
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 184 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+cris@MacBook-Pro-Cristian project % grep -A 10 "exports" ./node_modules/@mysten/dapp-kit/index.js
+
+grep: ./node_modules/@mysten/dapp-kit/index.js: No such file or directory
+cris@MacBook-Pro-Cristian project % npm uninstall @mysten/dapp-kit
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: use-sync-external-store@1.2.2
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   33 more (@mysten/dapp-kit, @radix-ui/react-arrow, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn node_modules/zustand/node_modules/use-sync-external-store
+npm warn   use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn   node_modules/zustand
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn   node_modules/zustand/node_modules/use-sync-external-store
+npm warn     use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn     node_modules/zustand
+
+removed 88 packages, and audited 680 packages in 7s
+
+69 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (2 moderate, 4 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm install @mysten/dapp-kit
+npm warn ERESOLVE overriding peer dependency
+npm warn deprecated @simplewebauthn/typescript-types@7.4.0: This package has been renamed to @simplewebauthn/types. Please install @simplewebauthn/types instead to ensure you receive future updates.
+
+added 88 packages, and audited 768 packages in 16s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (2 moderate, 4 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % grep -A 10 "exports" ./node_modules/@mysten/dapp-kit/index.js
+
+grep: ./node_modules/@mysten/dapp-kit/index.js: No such file or directory
+cris@MacBook-Pro-Cristian project % npm ls @mysten/dapp-kit
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+└── @mysten/dapp-kit@0.14.44
+
+cris@MacBook-Pro-Cristian project % npm ls react react-dom
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├─┬ @mysten/dapp-kit@0.14.44
+│ ├─┬ @radix-ui/react-dialog@1.1.4
+│ │ ├─┬ @radix-ui/react-compose-refs@1.1.1
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-context@1.1.1
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-dismissable-layer@1.1.3
+│ │ │ ├─┬ @radix-ui/react-use-callback-ref@1.1.0
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├─┬ @radix-ui/react-use-escape-keydown@1.1.0
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-focus-guards@1.1.1
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-focus-scope@1.1.1
+│ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-id@1.1.0
+│ │ │ ├─┬ @radix-ui/react-use-layout-effect@1.1.0
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-portal@1.1.3
+│ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-presence@1.1.2
+│ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-primitive@2.0.1
+│ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ @radix-ui/react-use-controllable-state@1.1.0
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ react-dom@19.0.0
+│ │ │ └── react@19.0.0 deduped
+│ │ ├─┬ react-remove-scroll@2.6.2
+│ │ │ ├─┬ react-remove-scroll-bar@2.3.8
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├─┬ react-style-singleton@2.2.3
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├── react@19.0.0 deduped
+│ │ │ ├─┬ use-callback-ref@1.3.3
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ └─┬ use-sidecar@1.1.3
+│ │ │   └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ └── react@19.0.0 deduped
+│ ├─┬ @radix-ui/react-dropdown-menu@2.1.4
+│ │ ├─┬ @radix-ui/react-menu@2.1.4
+│ │ │ ├─┬ @radix-ui/react-collection@1.1.1
+│ │ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├─┬ @radix-ui/react-direction@1.1.0
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├─┬ @radix-ui/react-popper@1.2.1
+│ │ │ │ ├─┬ @floating-ui/react-dom@2.1.2
+│ │ │ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ │ ├─┬ @radix-ui/react-arrow@1.1.1
+│ │ │ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ │ ├─┬ @radix-ui/react-use-rect@1.1.0
+│ │ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ │ ├─┬ @radix-ui/react-use-size@1.1.0
+│ │ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├─┬ @radix-ui/react-roving-focus@1.1.1
+│ │ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ │ └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+│ │ │ ├── react-dom@19.0.0 deduped
+│ │ │ └── react@19.0.0 deduped
+│ │ ├── react-dom@19.0.0 deduped
+│ │ └── react@19.0.0 deduped
+│ ├─┬ @radix-ui/react-slot@1.1.1
+│ │ └── react@19.0.0 deduped
+│ ├─┬ @tanstack/react-query@5.62.8
+│ │ └── react@19.0.0 deduped
+│ ├── react@19.0.0
+│ └─┬ zustand@4.5.5
+│   ├── react@19.0.0 deduped
+│   └─┬ use-sync-external-store@1.2.2
+│     └── react@19.0.0 deduped invalid: "^16.8.0 || ^17.0.0 || ^18.0.0" from node_modules/zustand/node_modules/use-sync-external-store
+└─┬ @web3-onboard/metamask@2.2.0
+  └─┬ @metamask/sdk@0.30.3
+    ├─┬ @metamask/sdk-install-modal-web@0.30.2
+    │ ├── react-dom@18.3.1 deduped
+    │ ├─┬ react-native@0.76.5
+    │ │ ├─┬ @react-native/virtualized-lists@0.76.5
+    │ │ │ └── react@18.3.1 deduped
+    │ │ └── react@18.3.1 deduped
+    │ └── react@18.3.1 deduped
+    ├─┬ react-dom@18.3.1
+    │ └── react@18.3.1 deduped
+    ├─┬ react-native-webview@11.26.1
+    │ └── react@18.3.1 deduped
+    └── react@18.3.1
+
+npm error code ELSPROBLEMS
+npm error invalid: react@19.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/react
+npm error A complete log of this run can be found in: /Users/cris/.npm/_logs/2024-12-21T22_08_51_487Z-debug-0.log
+cris@MacBook-Pro-Cristian project % npm uninstall react react-dom
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: use-sync-external-store@1.2.2
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   33 more (@mysten/dapp-kit, @radix-ui/react-arrow, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn node_modules/zustand/node_modules/use-sync-external-store
+npm warn   use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn   node_modules/zustand
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from use-sync-external-store@1.2.2
+npm warn   node_modules/zustand/node_modules/use-sync-external-store
+npm warn     use-sync-external-store@"1.2.2" from zustand@4.5.5
+npm warn     node_modules/zustand
+
+up to date, audited 768 packages in 7s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (2 moderate, 4 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm install react@18 react-dom@18
+
+
+added 18 packages, removed 16 packages, changed 3 packages, and audited 770 packages in 4s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (2 moderate, 4 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm ls react react-dom
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├─┬ @mysten/dapp-kit@0.14.44
+│ ├─┬ @radix-ui/react-dialog@1.1.4
+│ │ ├─┬ @radix-ui/react-compose-refs@1.1.1
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-context@1.1.1
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-dismissable-layer@1.1.3
+│ │ │ ├─┬ @radix-ui/react-use-callback-ref@1.1.0
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-use-escape-keydown@1.1.0
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-focus-guards@1.1.1
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-focus-scope@1.1.1
+│ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-id@1.1.0
+│ │ │ ├─┬ @radix-ui/react-use-layout-effect@1.1.0
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-portal@1.1.3
+│ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-presence@1.1.2
+│ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-primitive@2.0.1
+│ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-use-controllable-state@1.1.0
+│ │ │ └── react@18.3.1 deduped
+│ │ ├── react-dom@18.3.1 deduped
+│ │ ├─┬ react-remove-scroll@2.6.2
+│ │ │ ├─┬ react-remove-scroll-bar@2.3.8
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ react-style-singleton@2.2.3
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├── react@18.3.1 deduped
+│ │ │ ├─┬ use-callback-ref@1.3.3
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ └─┬ use-sidecar@1.1.3
+│ │ │   └── react@18.3.1 deduped
+│ │ └── react@18.3.1 deduped
+│ ├─┬ @radix-ui/react-dropdown-menu@2.1.4
+│ │ ├─┬ @radix-ui/react-menu@2.1.4
+│ │ │ ├─┬ @radix-ui/react-collection@1.1.1
+│ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-direction@1.1.0
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-dismissable-layer@1.1.3
+│ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-focus-scope@1.1.1
+│ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-popper@1.2.1
+│ │ │ │ ├─┬ @floating-ui/react-dom@2.1.2
+│ │ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ │ └── react@18.3.1 deduped
+│ │ │ │ ├─┬ @radix-ui/react-arrow@1.1.1
+│ │ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ │ └── react@18.3.1 deduped
+│ │ │ │ ├─┬ @radix-ui/react-use-rect@1.1.0
+│ │ │ │ │ └── react@18.3.1 deduped
+│ │ │ │ ├─┬ @radix-ui/react-use-size@1.1.0
+│ │ │ │ │ └── react@18.3.1 deduped
+│ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-portal@1.1.3
+│ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-presence@1.1.2
+│ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├─┬ @radix-ui/react-roving-focus@1.1.1
+│ │ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ │ └── react@18.3.1 deduped
+│ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├─┬ @radix-ui/react-primitive@2.0.1
+│ │ │ ├── react-dom@18.3.1 deduped
+│ │ │ └── react@18.3.1 deduped
+│ │ ├── react-dom@18.3.1 deduped
+│ │ └── react@18.3.1 deduped
+│ ├─┬ @radix-ui/react-slot@1.1.1
+│ │ └── react@18.3.1 deduped
+│ ├─┬ @tanstack/react-query@5.62.8
+│ │ └── react@18.3.1 deduped
+│ ├── react@18.3.1 deduped
+│ └─┬ zustand@4.5.5
+│   ├── react@18.3.1 deduped
+│   └─┬ use-sync-external-store@1.2.2
+│     └── react@18.3.1 deduped
+├─┬ @web3-onboard/metamask@2.2.0
+│ └─┬ @metamask/sdk@0.30.3
+│   ├─┬ @metamask/sdk-install-modal-web@0.30.2
+│   │ ├── react-dom@18.3.1 deduped
+│   │ ├─┬ react-native@0.76.5
+│   │ │ ├─┬ @react-native/virtualized-lists@0.76.5
+│   │ │ │ └── react@18.3.1 deduped
+│   │ │ └── react@18.3.1 deduped
+│   │ └── react@18.3.1 deduped
+│   ├── react-dom@18.3.1 deduped
+│   ├─┬ react-native-webview@11.26.1
+│   │ └── react@18.3.1 deduped
+│   └── react@18.3.1 deduped
+├─┬ react-dom@18.3.1
+│ └── react@18.3.1 deduped
+└── react@18.3.1
+
+cris@MacBook-Pro-Cristian project % npm run dev
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 179 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+Error:   Failed to scan for dependencies from entries:
+  /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/src/index.html
+
+  ✘ [ERROR] The JSX syntax extension is not currently enabled
+
+    src/main.js:53:4:
+      53 │     <div>
+         ╵     ^
+
+  The esbuild loader for this file is currently set to "js" but it must be set to "jsx" to be able to parse JSX syntax. You can use "loader: { '.js': 'jsx' }" to do that.
+
+
+    at failureErrorWithLog (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1649:15)
+    at /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1058:25
+    at runOnEndCallbacks (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1484:45)
+    at buildResponseToResult (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1056:7)
+    at /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1068:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1067:54)
+    at handleRequest (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:729:19)
+    at handleIncomingPacket (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:755:7)
+    at Socket.readFromStdout (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:679:7)
+00:14:27 [vite] Internal server error: Failed to parse source for import analysis because the content contains invalid JS syntax. If you are using JSX, make sure to name the file with the .jsx or .tsx extension.
+  Plugin: vite:import-analysis
+  File: /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/src/main.js:54:27
+  52 |    return (
+  53 |      <div>
+  54 |        <h1>Web3 Bridge</h1>
+     |                            ^
+  55 |        <button onClick={connectMetaMask}>Connect MetaMask</button>
+  56 |        <button onClick={connectSui}>Connect Sui Wallet</button>
+      at formatError (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-b2890f90.js:44062:46)
+      at TransformContext.error (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-b2890f90.js:44058:19)
+      at TransformContext.transform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-b2890f90.js:41784:22)
+      at async Object.transform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-b2890f90.js:44352:30)
+      at async loadAndTransform (file:///Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-b2890f90.js:55026:29)
+00:16:26 [vite] page reload main.js
+00:16:50 [vite] page reload index.html
+00:16:52 [vite] ✨ new dependencies optimized: @web3-onboard/core, @web3-onboard/metamask, @mysten/dapp-kit, react-dom/client, react
+cris@MacBook-Pro-Cristian project % npm run dev
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 115 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/core @web3-onboard/metamask
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├── @web3-onboard/core@2.23.0
+└── @web3-onboard/metamask@2.2.0
+
+cris@MacBook-Pro-Cristian project % npm uninstall @web3-onboard/core @web3-onboard/metamask
+
+
+removed 642 packages, and audited 128 packages in 3s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+cris@MacBook-Pro-Cristian project % npm install @web3-onboard/core@2.7.0 @web3-onboard/metamask@2.1.0
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: react-i18next@13.5.0
+npm warn Found: i18next@22.5.1
+npm warn node_modules/i18next
+npm warn   i18next@"22.5.1" from @metamask/sdk@0.20.5
+npm warn   node_modules/@metamask/sdk
+npm warn     @metamask/sdk@"^0.20.3" from @web3-onboard/metamask@2.1.0
+npm warn     node_modules/@web3-onboard/metamask
+npm warn   1 more (@metamask/sdk-install-modal-web)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn node_modules/react-i18next
+npm warn   peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.4
+npm warn   node_modules/@metamask/sdk-install-modal-web
+npm warn
+npm warn Conflicting peer dependency: i18next@24.2.0
+npm warn node_modules/i18next
+npm warn   peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn   node_modules/react-i18next
+npm warn     peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.4
+npm warn     node_modules/@metamask/sdk-install-modal-web
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 699 packages, and audited 827 packages in 32s
+
+107 packages are looking for funding
+  run `npm fund` for details
+
+23 vulnerabilities (12 low, 2 moderate, 6 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/core @web3-onboard/metamask
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├── @web3-onboard/core@2.7.0
+└── @web3-onboard/metamask@2.1.0
+
+cris@MacBook-Pro-Cristian project % npm run dev
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 169 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+✘ [ERROR] No matching export in "node_modules/@web3-onboard/common/dist/index.js" for import "SofiaProRegular"
+
+    node_modules/@web3-onboard/core/dist/index-1577e4b0.js:1:41:
+      1 │ ...h, ProviderRpcErrorCode, SofiaProRegular } from '@web3-onboard/c...
+        ╵                             ~~~~~~~~~~~~~~~
+
+/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1649
+  let error = new Error(`${text}${summary}`);
+              ^
+
+Error: Build failed with 1 error:
+node_modules/@web3-onboard/core/dist/index-1577e4b0.js:1:41: ERROR: No matching export in "node_modules/@web3-onboard/common/dist/index.js" for import "SofiaProRegular"
+    at failureErrorWithLog (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1649:15)
+    at /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1058:25
+    at /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/node_modules/esbuild/lib/main.js:1525:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  errors: [
+    {
+      detail: undefined,
+      id: '',
+      location: {
+        column: 41,
+        file: 'node_modules/@web3-onboard/core/dist/index-1577e4b0.js',
+        length: 15,
+        line: 1,
+        lineText: "import { weiToEth, ProviderRpcErrorCode, SofiaProRegular } from '@web3-onboard/common';",
+        namespace: '',
+        suggestion: ''
+      },
+      notes: [],
+      pluginName: '',
+      text: 'No matching export in "node_modules/@web3-onboard/common/dist/index.js" for import "SofiaProRegular"'
+    }
+  ],
+  warnings: []
+}
+
+Node.js v23.5.0
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/common      
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├─┬ @web3-onboard/core@2.7.0
+│ └── @web3-onboard/common@2.4.2
+└─┬ @web3-onboard/metamask@2.1.0
+  └── @web3-onboard/common@2.4.2 deduped
+
+cris@MacBook-Pro-Cristian project % npm uninstall @web3-onboard/core @web3-onboard/metamask
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: react-i18next@13.5.0
+npm warn Found: i18next@22.5.1
+npm warn node_modules/i18next
+npm warn   i18next@"22.5.1" from @metamask/sdk@0.20.5
+npm warn   node_modules/@metamask/sdk
+npm warn     @metamask/sdk@"^0.20.3" from @web3-onboard/metamask@2.1.0
+npm warn     node_modules/@web3-onboard/metamask
+npm warn   1 more (@metamask/sdk-install-modal-web)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn node_modules/react-i18next
+npm warn   peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.4
+npm warn   node_modules/@metamask/sdk-install-modal-web
+npm warn
+npm warn Conflicting peer dependency: i18next@24.2.0
+npm warn node_modules/i18next
+npm warn   peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn   node_modules/react-i18next
+npm warn     peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.4
+npm warn     node_modules/@metamask/sdk-install-modal-web
+
+removed 699 packages, and audited 128 packages in 3s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+cris@MacBook-Pro-Cristian project % npm install @web3-onboard/core@latest @web3-onboard/metamask@latest
+
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 641 packages, and audited 769 packages in 29s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (2 moderate, 4 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/core @web3-onboard/metamask
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├── @web3-onboard/core@2.23.0
+└── @web3-onboard/metamask@2.2.0
+
+cris@MacBook-Pro-Cristian project % npm run dev
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 192 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+Failed to load url /src/main.jsx (resolved id: /src/main.jsx). Does the file exist?
+00:41:46 [vite] vite.config.js changed, restarting server...
+failed to load config from /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/vite.config.js
+00:41:46 [vite] Cannot find module '@vitejs/plugin-react'
+Require stack:
+- /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/vite.config.js
+- /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-b2890f90.js
+00:41:46 [vite] server restart failed
+cris@MacBook-Pro-Cristian project % npm run dev                                
+
+
+> project@1.0.0 dev
+> vite
+
+failed to load config from /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/vite.config.js
+error when starting dev server:
+Error: Cannot find module '@vitejs/plugin-react'
+Require stack:
+- /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/vite.config.js
+- /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/node_modules/vite/dist/node/chunks/dep-b2890f90.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1410:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)
+    at Module.require (node:internal/modules/cjs/loader:1496:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project/vite.config.js:36:35)
+    at Module._compile (node:internal/modules/cjs/loader:1740:14)
+cris@MacBook-Pro-Cristian project % npm install @vitejs/plugin-react --save-dev
+
+
+added 1 package, and audited 770 packages in 8s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (2 moderate, 4 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm run dev                                
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 165 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+cris@MacBook-Pro-Cristian project % npm ls @web3-onboard/core @web3-onboard/metamask
+
+project@1.0.0 /Users/cris/PROGRAMARE/FACULTATE/AN_3/crypto/project
+├── @web3-onboard/core@2.23.0
+└── @web3-onboard/metamask@2.2.0
+
+cris@MacBook-Pro-Cristian project % npm uninstall @web3-onboard/core    
+
+removed 43 packages, and audited 727 packages in 4s
+
+75 packages are looking for funding
+  run `npm fund` for details
+
+4 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm install @web3-onboard/core@2.8.3
+
+added 88 packages, and audited 815 packages in 12s
+
+107 packages are looking for funding
+  run `npm fund` for details
+
+23 vulnerabilities (12 low, 2 moderate, 6 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+cris@MacBook-Pro-Cristian project % npm run dev
+
+
+> project@1.0.0 dev
+> vite
+
+
+  VITE v4.5.5  ready in 195 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+✘ [ERROR] No matching export in "node_modules/@web3-onboard/common/dist/index.js" for import "SofiaProRegular"
+
+    node_modules/@web3-onboard/core/dist/index-e439eca4.js:1:113:
+      1 │ ...h, ProviderRpcErrorCode, SofiaProRegular } from '@web3-onboard/c...
+        ╵                             ~~~~~~~~~~~~~~~
+
+cris@MacBook-Pro-Cristian project % 
+
+
+
+
+
+
+
+
+
+

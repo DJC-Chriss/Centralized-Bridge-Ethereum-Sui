@@ -1,0 +1,6 @@
+[package]
+name = "sui_project"
+version = "0.0.1"
+authors = ["you@example.com"]
+license = "Apache-2.0"
+edition = "legacy"   # or "2024.alpha" / "2024.beta" / "legacy"
