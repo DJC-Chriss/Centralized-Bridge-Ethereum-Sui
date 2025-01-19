@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract IBT is ERC20, Ownable {
     constructor() ERC20("IBToken", "IBT") {
-        // Optionally mint initial supply to owner
     }
 
     function mint(address to, uint256 amount) external onlyOwner {
